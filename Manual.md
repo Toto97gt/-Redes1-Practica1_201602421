@@ -113,7 +113,7 @@ copy running-config startup-config
 
 ### Topología 2
 
-![Topologia 1](Topologia2.jpeg)
+![Topologia 2](Topologia2.jpeg)
 
 Se utilizaron 3 Ethernet Switch y 3 VPCS.
 
@@ -124,6 +124,20 @@ Se utilizaron 3 Ethernet Switch y 3 VPCS.
 |  SI     | INFORMATICA   | SWITCH2       | 192.168.119.0 | 192.168.29.1 |
 |  SI     | CONTABILIDAD  | SWITCH2       | 192.168.19.0  | 192.168.49.1 |
 |  SI     | VENTAS        | SWITCH1       | 192.168.129.0 | 192.168.39.1 |
+
+#### Configuración de ethernet switch
+
+##### Switch 2
+
+![Topologia 2 - Switch2](Topologia2_S1.jpeg)
+
+##### Switch 1
+
+![Topologia 2 - Switch1](Topologia2_S2.jpeg)
+
+##### Switch 3
+
+![Topologia 2 - Switch3](Topologia2_S3.jpeg)
 
 ### VPN
 
