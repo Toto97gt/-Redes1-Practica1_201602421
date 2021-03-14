@@ -126,13 +126,13 @@ Se utilizaron 3 Ethernet Switch y 3 VPCS.
 ```
     $ sudo bash openvpn-install.sh
 ```
-![VPN 1 ](Vpn1.png)
+![VPN 1 ](Vpn1.PNG)
 
 2. Selecciona la opcion 1.
 3. Ingresa el nombre de tu nuevo cliente.
 4. Descarga el archivo .ovn, el cual servira para que el cliente openvpn pueda conectarse a la vpn.
 
-![VPN 2](Vpn2.png)
+![VPN 2](Vpn2.PNG)
 
 ### Máquinas virtuales
 
