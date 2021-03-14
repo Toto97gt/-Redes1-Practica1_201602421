@@ -9,6 +9,7 @@
     - [Topología 2](#topología-2)
       - [Distribución de pc's en topología 2](#distribución-de-pcs-en-topología-2)
     - [VPN](#vpn)
+      - [Configuracion de un nuevo cliente VPN](#Configuracion-de-un-nuevo-cliente-VPN)
     - [Máquinas virtuales](#máquinas-virtuales)
 
 ## Integrantes
@@ -18,6 +19,7 @@
 | 201020831 | Marco Antonio Fidencio Chávez Fuentes |
 | 201602421 | Diego Alejandro Vasquez               |
 | 201612331 | José Orlando Wannan Escobar           |
+| 201712350 | Helmut Efrain Najarro Alvarez         |
 
 ## Configuración
 
@@ -56,23 +58,100 @@ ip 192.168.29.15/24 192.168.29.1
 ping 192.168.29.30
 ```
 
+#### Codigo configuracion Switch
+##### Switch 1
+
+```bash
+enable
+configure terminal
+
+vlan 29
+name vlan10
+exit
+vlan 39
+name vlan39
+exit
+vlan 49
+name vlan49
+exit
+
+interface f1/1
+switchport mode access
+switchport access vlan 29
+no shutdown
+exit
+interface f1/2
+switchport mode access
+switchport access vlan 39
+no shutdown
+exit
+interface f1/3
+switchport mode access
+switchport access vlan 49
+no shutdown
+exit
+do sh vlan-s
+
+interface f1/10
+switchport mode trunk
+exit
+interface f1/11
+switchport mode trunk
+exit
+
+exit
+copy running-config startup-config
+```
+
 ### Topología 2
 
-![Topologia 1](Topologia1.png)
+![Topologia 1](Topologia2.jpeg)
+
+Se utilizaron 3 Ethernet Switch y 3 VPCS.
 
 #### Distribución de pc's en topología 2
 
-| VIRTUAL | HOST | SWITCH | DIRECCIÓN IP | GATEWAY |
-| :-----: | ---- | ------ | :----------: | :-----: |
-|         |      |        |              |         |
-|         |      |        |              |         |
-|         |      |        |              |         |
-|         |      |        |              |         |
-|         |      |        |              |         |
-|         |      |        |              |         |
-|         |      |        |              |         |
-|         |      |        |              |         |
+| VIRTUAL | HOST          | SWITCH        | DIRECCIÓN IP  | GATEWAY      |
+| :-----: | :-----------: | :-----------: | :-----------: | :----------: |
+|  SI     | INFORMATICA   | SWITCH2       | 192.168.119.0 | 192.168.29.1 |
+|  SI     | CONTABILIDAD  | SWITCH2       | 192.168.19.0  | 192.168.49.1 |
+|  SI     | VENTAS        | SWITCH1       | 192.168.129.0 | 192.168.39.1 |
 
 ### VPN
 
+#### Configuracion de un nuevo cliente VPN
+
+1. En una Instancia de VM's, ejecuta la siguiente instruccion
+
+```
+    $ sudo bash openvpn-install.sh
+```
+![VPN 1 ](Vpn1.png)
+
+2. Selecciona la opcion 1.
+3. Ingresa el nombre de tu nuevo cliente.
+4. Descarga el archivo .ovn, el cual servira para que el cliente openvpn pueda conectarse a la vpn.
+
+![VPN 2](Vpn2.png)
+
 ### Máquinas virtuales
+
+#### VM, maquinas virtuales
+
+```
+Maquina 1 - ventas
+```
+![Maquina 1](maquina1.jpeg) 
+
+```
+Maquina 2 - Contabilidad
+```
+
+![Maquina 2](maquina2.jpeg) 
+
+
+```
+Maquina 3 - Informatica
+```
+
+![Maquina 3](maquina3.jpeg) 
