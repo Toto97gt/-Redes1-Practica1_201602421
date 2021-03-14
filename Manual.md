@@ -1,3 +1,9 @@
+# UNIVERSIDAD DE SAN CARLOS DE GUATEMALA
+# REDES DE COMPUTADORAS 1
+# LABORATORIO DE REDES DE COMPUTADORAS 1
+
+
+
 # Manual de construcción y configuración
 
 - [Manual de construcción y configuración](#manual-de-construcción-y-configuración)
@@ -13,6 +19,8 @@
     - [Máquinas virtuales](#máquinas-virtuales)
 
 ## Integrantes
+
+### Grupo: 19
 
 |   Carné   | Nombre                                |
 | :-------: | ------------------------------------- |
